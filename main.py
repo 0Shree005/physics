@@ -3,9 +3,9 @@ import numpy as np
 
 # Constants
 v0 = 20 #initial velocity (m/s)
-theta = np.radians(45) # angle converted to radians
+theta = np.radians(45) # θ angle converted to radians
 g = 9.81 # acc. due to gravity m/s^2
-b = 0 # air resistance coefficient
+b = 0.8 # air resistance coefficient
 time_step = 0.01 # seconds
 total_time = 5 # seconds
 
@@ -18,7 +18,6 @@ y = 0 # initial position in y direction
 
 # Lists to store positions
 x_positions = [x]
-
 y_positions = [y]
 
 
@@ -43,27 +42,9 @@ for _ in np.arange(0, total_time, time_step):
     x_positions.append(x)
     y_positions.append(y)
 
-    # break out of the loop if projectile hits the ground
+    # break out of the loop when projectile hits the ground
     if y < 0:
         break
-
-
-
-# def x_position(v0, theta, time, g):
-#     return v0 * np.cos(theta) * time
-
-# def y_position(v0, theta, time, g):
-#     return v0 * np.sin(theta) * time - 0.5 * g * time ** 2
-
-
-
-# # Calculating positions
-
-# for t in np.arange(0, total_time + time_step, time_step):
-#     x = x_position(v0, theta, t, g)
-#     y = y_position(v0, theta, t, g)
-#     x_positions.append(x)
-#     y_positions.append(y)
 
 
 # plotting the positions
@@ -73,7 +54,6 @@ plt.xlabel("Horizontal Position (X)")
 plt.ylabel("Vertical Position (Y)")
 plt.title(f"Projectile Motion with Initial Velocity {v0} m/s and angle {np.degrees(theta)} degrees")
 plt.legend()
-
 plt.grid(True) # grid lines
 
 plt.show()
