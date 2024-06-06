@@ -11,22 +11,22 @@ To compare the trajectory of the projectile with and without air resistance, and
 ### Equations of Motion
 
 #### Equations without air resistance
-x(t) = v0 cos(θ) t 
+x(t) = v0 cos(θ) t \
 y(t) = v0 sin(θ) t - 1/2gt^2
 
 #### Equations with air resistance
-ax = -b * v * vx
- ay = -g - b * v * vy
+ax = -b * v * vx \
+ay = -g - b * v * vy \
 { where v = sqrt( (vx^2) + (vy^2) ) }
 
 ### Updating Velocities and Positions Using Euler's Method
 
 #### Updating Velocities
-vx (i + 1) = vx(i) + ax(i)Δt
+vx (i + 1) = vx(i) + ax(i)Δt \
 vy (i + 1) = vy(i) + ay(i)Δt
 
 #### Updating Positions
-x (i + 1) = x(i) + vx(i)Δt
+x (i + 1) = x(i) + vx(i)Δt \
 y (i + 1) = y(i) + vy(i)Δt
 
 ### Implementation
